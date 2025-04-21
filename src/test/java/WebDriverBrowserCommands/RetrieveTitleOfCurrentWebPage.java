@@ -1,6 +1,5 @@
+package WebDriverBrowserCommands;
 
-
-package LocatorsExamples;
 
 
 import org.testng.annotations.AfterSuite;
@@ -10,11 +9,10 @@ import org.testng.annotations.Test;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class LocateByXpath{
+public class RetrieveTitleOfCurrentWebPage  {
 	Playwright playwright;
 	BrowserType browsertype ;
 	Browser browser ;
@@ -34,15 +32,15 @@ public class LocateByXpath{
 	@Test(priority=0)
 	public void OpenUrl() throws InterruptedException
 	{
-		page.navigate("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+		page.navigate("https://devxhub.com/");
 		Thread.sleep(500);
 	}
-	@Test(priority =1)
-	public void LocateByxpath() throws InterruptedException
+	@Test(priority=1)
+	public void FetchTitle() throws InterruptedException
 	{
-		ElementHandle locateByxpath =page.querySelector("(//input[@id='mobile'])[1]");
-		locateByxpath.fill("1234567890");
-		Thread.sleep(500);
+		String Title =page.title();
+		System.out.println("Title : " +Title);
+		Thread.sleep(5000);
 	}
 	
 	@AfterSuite

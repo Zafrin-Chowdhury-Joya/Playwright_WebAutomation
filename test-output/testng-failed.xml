@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="LocatorsExamples.LocateByClassNameAttribute">
+      <class name="WebDriver_Browser_Commands.RetrieveTextByGetTextMethod">
         <methods>
+          <include name="getTextMethod"/>
           <include name="closeBrowser"/>
-          <include name="locateByClassName"/>
           <include name="startBrowser"/>
         </methods>
-      </class> <!-- LocatorsExamples.LocateByClassNameAttribute -->
+      </class> <!-- WebDriver_Browser_Commands.RetrieveTextByGetTextMethod -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

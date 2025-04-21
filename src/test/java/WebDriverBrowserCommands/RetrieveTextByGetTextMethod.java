@@ -1,7 +1,4 @@
-
-
-package LocatorsExamples;
-
+package WebDriverBrowserCommands;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -14,7 +11,7 @@ import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class LocateByXpath{
+public class RetrieveTextByGetTextMethod{
 	Playwright playwright;
 	BrowserType browsertype ;
 	Browser browser ;
@@ -34,15 +31,15 @@ public class LocateByXpath{
 	@Test(priority=0)
 	public void OpenUrl() throws InterruptedException
 	{
-		page.navigate("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+		page.navigate("https://devxhub.com/");
 		Thread.sleep(500);
 	}
-	@Test(priority =1)
-	public void LocateByxpath() throws InterruptedException
+	@Test(priority=1)
+	public void getTextMethod() throws InterruptedException
 	{
-		ElementHandle locateByxpath =page.querySelector("(//input[@id='mobile'])[1]");
-		locateByxpath.fill("1234567890");
-		Thread.sleep(500);
+		ElementHandle element =page.querySelector("//div[@class='container-fluid bg-[#130C2A]']");
+		System.out.println("Text = "+element.textContent());		
+		Thread.sleep(5000);
 	}
 	
 	@AfterSuite
