@@ -1,6 +1,4 @@
-package RadioButtonExamples;
-
-
+package CheckBoxHandling;
 
 
 import org.testng.annotations.AfterSuite;
@@ -14,7 +12,7 @@ import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class SingleRadioButton {
+public class SelectCheckboxByID {
 	Playwright playwright;
 	BrowserType browsertype ;
 	Browser browser ;
@@ -38,11 +36,11 @@ public class SingleRadioButton {
 		Thread.sleep(500);
 	}
 	@Test(priority =1)
-	public void RadioButton() throws InterruptedException
+	public void CheckboxById() throws InterruptedException
 	{
-		ElementHandle radiobutton =page.querySelector("//div[3]//div[1]//div[1]//div[2]//input[1]");
-		radiobutton.click();
-		Thread.sleep(5000);
+		ElementHandle CheckById =page.querySelector("#hobbies");
+		CheckById.click();
+		Thread.sleep(500);
 	}
 	
 	@AfterSuite

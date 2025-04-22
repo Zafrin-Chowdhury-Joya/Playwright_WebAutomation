@@ -1,7 +1,8 @@
-package RadioButtonExamples;
+
+package CheckBoxHandling;
 
 
-
+import java.util.List;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -14,7 +15,8 @@ import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class SingleRadioButton {
+@Test
+public class SelectMultiplesCheckBox{
 	Playwright playwright;
 	BrowserType browsertype ;
 	Browser browser ;
@@ -37,12 +39,17 @@ public class SingleRadioButton {
 		page.navigate("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
 		Thread.sleep(500);
 	}
-	@Test(priority =1)
-	public void RadioButton() throws InterruptedException
+	@Test(priority=1)
+	public void Checkbox() throws InterruptedException
 	{
-		ElementHandle radiobutton =page.querySelector("//div[3]//div[1]//div[1]//div[2]//input[1]");
-		radiobutton.click();
-		Thread.sleep(5000);
+	List<ElementHandle> checkboxs = page.querySelectorAll("//input[@type='checkbox']");
+	for (ElementHandle el : checkboxs) {
+		if (!el.isChecked()) {
+			el.click();
+			Thread.sleep(5000);
+		}
+	}
+	Thread.sleep(5000);
 	}
 	
 	@AfterSuite
